@@ -15,7 +15,11 @@ function onAddItemSubmit(e) {
     return;
   }
 
+  // create item dom element
   addItemToDom(newItem);
+
+  // add item to local storage
+  addItemToStorage(newItem);
 
   checkUI();
 
@@ -33,6 +37,21 @@ function addItemToDom(item) {
 
   // Add li to the DOM
   itemList.appendChild(li);
+}
+
+function addItemToStorage(item) {
+  let itemsFromStorage;
+  if (localStorage.getItem("items") === null) {
+    itemsFromStorage = [];
+  } else {
+    itemsFromStorage = JSON.parse(localStorage.getItem("items"));
+  }
+
+  // add new item to storage
+  itemsFromStorage.push(item);
+
+  // Convert to JSON string and set to localStorage
+  localStorage.setItem("items", JSON.stringify(itemsFromStorage));
 }
 
 function createButton(classes) {
