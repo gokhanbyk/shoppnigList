@@ -1,3 +1,3 @@
 # Shopping List
 
-- https://gokhanbyk.github.io/shoppnigList/
+- [To see the project](https://gokhanbyk.github.io/shoppnigList/)
